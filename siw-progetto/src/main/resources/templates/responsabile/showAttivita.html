@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<title>Centri di formazione</title>
+		<meta charset="utf-8" />
+		<meta name = "format-detection" content = "telephone=no" />
+		<link rel="icon" href="assets/images/favicon.ico">
+		<link rel="shortcut icon" href="assets/images/favicon.ico" />
+		<link rel="stylesheet" href="/assets/css/owl.carousel.css">
+		<link rel="stylesheet" href="/assets/css/camera.css">
+		<link rel="stylesheet" href="/assets/css/style.css">	
+		<script src="/assets/js/jquery.js"></script>
+		<script src="/assets/js/jquery-migrate-1.1.1.js"></script>
+		<script src="/assets/js/jquery.easing.1.3.js"></script>
+		<script src="/assets/js/script.js"></script> 
+		<script src="/assets/js/superfish.js"></script>
+		<script src="/assets/js/jquery.equalheights.js"></script>
+		<script src="/assets/js/jquery.mobilemenu.js"></script>
+		<script src="/assets/js/tmStickUp.js"></script>
+		<script src="/assets/js/jquery.ui.totop.js"></script>
+		<script src="/assets/js/camera.js"></script>
+		<script src="/assets/js/owl.carousel.js"></script> 
+		
+		
+		<script src="/assets/js/jquery.mobile.customized.min.js"></script>
+		<script>
+		 $(window).load(function(){
+		  $().UItoTop({ easingType: 'easeOutQuart' });
+		  $('#stuck_container').tmStickUp({});  
+		
+		  $('#camera_wrap').camera({
+		    loader: false,
+		    pagination: false ,
+		    minHeight: '400',
+		    thumbnails: false,
+		    height: '38.07291666666667%',
+		    caption: false,
+		    navigation: true,
+		    fx: 'mosaic'
+		  });
+		
+		  $("#owl").owlCarousel({
+		    items : 3, //10 items above 1000px browser width
+		    itemsDesktop : [995,1], //5 items between 1000px and 901px
+		    itemsDesktopSmall : [767, 1], // betweem 900px and 601px
+		    itemsTablet: [700, 1], //2 items between 600 and 0
+		    itemsMobile : [479, 1], // itemsMobile disabled - inherit from itemsTablet option
+		    navigation : true,
+		    pagination :  false
+		  }); 
+		 }); 
+		</script>
+		
+
+	</head>
+	<body class="page1" id="top">
+	
+	<!--==============================
+              header
+=================================-->
+<header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1 class="logo">
+        <a th:href="@{/role}">
+          ORGANIZZAZIONE
+          <span>Centri e Allievi</span>
+        </a>
+      </h1>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <section id="stuck_container">
+  
+  
+
+    <div class="container_12">
+        <div class="grid_12">          
+          <div class="navigation">
+            <nav>
+              <ul class="sf-menu">
+          
+    		  <li><a th:href="@{/addAllievoAttivita}">Registra l'allievo all' attività </a></li>
+    		  <li><a th:href="@{/addAllievo}">Inserisci allievo</a></li>
+    		  <li><a th:href="@{/addAttivita}">Inserisci una nuova attività</a></li>
+    		  
+             </ul>
+            </nav>
+            <div class="clear"></div>
+          </div>       
+         <div class="clear"></div>  
+     </div> 
+     <div class="clear"></div>
+    </div> 
+  </section>
+</header>
+
+
+<section>
+<div>
+   		<section>
+				<a th:href="@{/role}" class="button">Torna alla homepage</a>
+			</section>
+			</div>
+
+  </section>
+<section id="content"><div class="ic">More Website Templates @ TemplateMonster.com - September22, 2014!</div>
+
+  <div class="container_12">
+    <div class="grid_12">
+      
+      <h2>Attività: <span th:text="${attivita.name}" ></span></h2>
+      <img src="images/page3_img.jpg" alt="" class="img_inner fleft">
+      <div class="extra_wrapper">
+        
+		<div>
+			<h3>Nome: </h3><span th:text="${attivita.name}"></span>
+   		</div>
+   		<div>
+			<h3>Data: </h3><span th:text="${attivita.data}"></span>
+   		</div>
+		<div>
+			<h3>Orario: </h3><span th:text="${attivita.orario}"></span>
+   		</div>
+   		
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+  </section>
+  </body>
+  </html>
